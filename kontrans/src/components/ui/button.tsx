@@ -10,6 +10,8 @@ interface ButtonProps {
   onClick?: () => void;
 
   asChild?: boolean;
+
+  disabled?: boolean;
 }
 
 export function Button({ onClick, children }: ButtonProps) {
