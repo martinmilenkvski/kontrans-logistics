@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Plane, Ship, Truck } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { Button } from '../components/ui/button'
 
 
 interface ServiceCardProps {

@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-// import { Button } from '../components/ui/button'
+import { Button } from '../components/ui/button'
 import { ArrowRight, ArrowLeft } from 'lucide-react'
 
 const slides = [
@@ -128,8 +128,7 @@ export function Hero() {
               transition={{ delay: 0.4 }}
             >
               <Button 
-                size="lg"
-                className="bg-red-500 hover:bg-red-600 text-white px-8"
+                className="bg-red-500 hover:bg-red-600 text-white px-8 py-3 text-lg"
               >
                 Побарај понуда
               </Button>

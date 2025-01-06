@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { LoginModal } from "@/components/login-modal";
+import { Button } from "../components/ui/button";
+import { LoginModal } from "./login-modal";
 
 export function Nav() {
   const [isOpen, setIsOpen] = useState(false);
