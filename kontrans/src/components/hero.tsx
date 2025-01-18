@@ -7,28 +7,31 @@ const slides = [
   {
     id: 1,
     title: "Глобална Логистика",
-    subtitle: "Вашето комплетно транспортно решение",
-    image: "https://picsum.photos/1920/1080?random=1",
+    subtitle:
+      "Вашиот товар е во сигурни раце, испорачуван насекаде низ светот, точно на време.",
+    image: "/images/shipping.jpg",
   },
   {
     id: 2,
-    title: "Иновативни Решенија",
-    subtitle: "Напредна технологија во служба на транспортот",
-    image: "https://picsum.photos/1920/1080?random=2",
+    title: "Бродски транспорт",
+    subtitle:
+      "Ефикасни решенија за транспорт преку море, поврзувајќи ги глобални пристаништа со вашиот бизнис",
+    image: "/images/port.jpg",
   },
   {
     id: 3,
-    title: "Доверлив Партнер",
-    subtitle: "Сигурност и прецизност во секоја пратка",
-    image: "https://picsum.photos/1920/1080?random=3",
+    title: "Авионски транспорт",
+    subtitle: "Брза и сигурна испорака за вашите најважни пратки",
+    image: "/images/air.jpg",
   },
   {
     id: 4,
-    title: "Светска Мрежа",
-    subtitle: "Поврзуваме дестинации низ целиот свет",
-    image: "https://picsum.photos/1920/1080?random=4",
+    title: "Локален транспорт",
+    subtitle:
+      "Флексибилни опции за камионски транспорт за Македонија и регионот",
+    image: "/images/truck.jpg",
   },
-]
+];
 
 export function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -58,7 +61,7 @@ export function Hero() {
   }, [nextSlide])
 
   return (
-    <div className="relative h-screen overflow-hidden bg-black">
+    <div className="relative h-screen overflow-hidden bg-black p-16 max-width-7xl mx-auto">
       {/* Current Slide */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -86,9 +89,9 @@ export function Hero() {
           animate={{ opacity: 0.1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
           className="text-[20rem] font-bold text-white select-none"
-          style={{ WebkitTextStroke: '1px rgba(255,255,255,0.2)' }}
+          style={{ WebkitTextStroke: "1px rgba(255,255,255,0.2)" }}
         >
-          {(currentSlide + 1).toString().padStart(2, '0')}
+          {(currentSlide + 1).toString().padStart(2, "0")}
         </motion.div>
       </div>
 
@@ -105,15 +108,15 @@ export function Hero() {
             className="space-y-8"
           >
             <div className="space-y-2">
-              <motion.h1 
-                className="text-4xl font-bold text-white"
+              <motion.h1
+                className="text-7xl font-bold text-white mb-4"
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.2 }}
               >
                 {slides[currentSlide].title}
               </motion.h1>
-              <motion.p 
+              <motion.p
                 className="text-xl text-white/70"
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -127,9 +130,7 @@ export function Hero() {
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
-              <Button 
-                className="bg-red-500 hover:bg-red-600 text-white px-8 py-3 text-lg"
-              >
+              <Button className="bg-red-500 hover:bg-red-600 text-white px-8 py-3 text-lg">
                 Побарај понуда
               </Button>
             </motion.div>
@@ -138,7 +139,7 @@ export function Hero() {
 
         {/* Right Side - Navigation */}
         <div className="flex flex-col justify-end p-16">
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center justify-between mb-8 ">
             <div className="flex items-center gap-4">
               <button
                 onClick={prevSlide}
@@ -154,12 +155,12 @@ export function Hero() {
               </button>
             </div>
             <div className="text-white space-x-2">
-              <span className="text-2xl font-light">
-                {(currentSlide + 1).toString().padStart(2, '0')}
+              <span className="text-5xl font-bold">
+                {(currentSlide + 1).toString().padStart(2, "0")}
               </span>
-              <span className="text-white/40">/</span>
-              <span className="text-white/40">
-                {slides.length.toString().padStart(2, '0')}
+              <span className="text-white/40 text-3xl">/</span>
+              <span className="text-white/40 text-3xl">
+                {slides.length.toString().padStart(2, "0")}
               </span>
             </div>
           </div>
@@ -174,9 +175,11 @@ export function Hero() {
           </div>
 
           {/* Next Slide Preview */}
-          <div className="mt-8">
-            <span className="text-sm text-white/60 mb-2 block">Next</span>
-            <div className="relative w-48 h-32 overflow-hidden rounded-lg">
+          <div className="mt-8 ">
+            <span className="text-sm text-white/60 mb-4 block text-right">
+              Следи
+            </span>
+            <div className="relative w-48 h-32 overflow-hidden rounded-lg justify-self-end">
               <img
                 src={slides[(currentSlide + 1) % slides.length].image}
                 alt="Next slide"
@@ -198,6 +201,6 @@ export function Hero() {
         <img src="/logo.svg" alt="Kontrans Logo" className="h-8 w-auto" />
       </motion.div>
     </div>
-  )
+  );
 }
 

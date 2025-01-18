@@ -15,7 +15,7 @@ export function Nav() {
         animate={{ y: 0 }}
         className="fixed w-full z-50 bg-slate-900/80 backdrop-blur-lg border-b border-slate-800"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-32">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <a href="/">
