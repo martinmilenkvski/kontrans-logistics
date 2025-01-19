@@ -11,7 +11,7 @@ export function AboutHero() {
       >
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-900/60" />
         <img
-          src="/about-hero.jpg"
+          src="images/About.jpg"
           alt="Kontrans team"
           className="w-full h-full object-cover"
         />

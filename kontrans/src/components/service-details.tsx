@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { Ship, Truck, Plane, CheckCircle } from "lucide-react";
 import { Button } from "../components/ui/button";
@@ -9,12 +7,12 @@ const services = [
     id: "maritime",
     title: "Бродски транспорт",
     subtitle: "Контејнерски транспорт",
-    image: "/maritime-transport.jpg",
+    image: "/images/brodskitransport.png",
     description:
       "Преку мрежата на нашите деловни партнери во пристаништата во Солун, Драч, Варна, Бургас, Истанбул, Измир и други.",
     features: [
       "Организација на бродски транспорт и детална информација за движењето на пратките",
-      "Организација на пристанишни услуги, манипулација на контејнери во пристаништни терминали",
+      "Организација на пристанишни услуги, манипулација на контејнери во пристанишни терминали",
       "Организација на царински формалности во пристаништата до превземање на пратките",
       "Комбиниран транспорт од земјите и железница",
     ],
@@ -23,7 +21,7 @@ const services = [
     id: "road",
     title: "Камионски транспорт",
     subtitle: "Транспорт на контејнери и помали пратки",
-    image: "/road-transport.jpg",
+    image: "/images/Container-Truck.png",
     description:
       "Обезбедуваме решенија за камионски транспорт според вашите потреби. Како воспоставен лидер во секторот логистика имаме загарантиран пристап и дистрибуција за сите Балкански земји со транспорт преку во соработка со нашиот дуги и угледен, секаде препознатлив партнер во регионот и надвор од вашата компанија.",
     features: [],
@@ -32,7 +30,7 @@ const services = [
     id: "air",
     title: "Авионски транспорт",
     subtitle: "Карго авионски транспорт",
-    image: "/air-transport.jpg",
+    image: "images/AirTransport.png",
     description:
       'Следејќи ги потребите на нашите клиенти и нивната желба за брзина и професионалност, од 2015 година нудиме специјално подобрен авионски карго транспорт, на основа на соработка со сите Авиокомпании кои оперираат околу Скопје и регионалните аеродроми. Нашата услуга не е ограничена само на аеродромот, туку всушност и целосно може да услужите „од врата до врата". Исто така, на барање достапни се и карго чартер летови. Редовни ги следиме пратките и ги информираме нашите клиенти за нивниот статус и помошта како и за претставување време на пристигнување.',
     features: [],
@@ -51,12 +49,16 @@ export function ServiceDetails() {
           className={`relative ${index !== services.length - 1 ? "mb-32" : ""}`}
         >
           <div
-            className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${
-              index % 2 === 0 ? "lg:flex-row-reverse" : ""
-            }`}
+            className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`}
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div className="relative">
+              
+              {/* Image Container */}
+              <div
+                className={`relative ${
+                  index === 1 ? "lg:order-2" : ""
+                }`}
+              >
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -71,7 +73,12 @@ export function ServiceDetails() {
                 </motion.div>
               </div>
 
-              <div className="space-y-6">
+              {/* Text Container */}
+              <div
+                className={`space-y-6 ${
+                  index === 1 ? "lg:order-1" : ""
+                }`}
+              >
                 <div className="inline-flex items-center space-x-2">
                   {service.id === "maritime" && (
                     <Ship className="w-6 h-6 text-red-500" />

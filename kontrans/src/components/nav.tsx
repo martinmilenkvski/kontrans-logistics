@@ -21,9 +21,9 @@ export function Nav() {
               <a href="/">
                 <motion.img
                   whileHover={{ scale: 1.05 }}
-                  src="/logo.svg"
+                  src="images/logo.png"
                   alt="Kontrans"
-                  className="h-8 w-auto"
+                  className="h-12 w-auto"
                 />
               </a>
             </div>

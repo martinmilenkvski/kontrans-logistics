@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
+ 
 
 export function AboutSections() {
   return (
@@ -40,18 +41,6 @@ export function AboutSections() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              className="relative"
-            >
-              <img
-                src="/forklift-operator.png"
-                alt="Forklift operator"
-                className="w-full max-w-md mx-auto"
-              />
-            </motion.div>
-            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -84,6 +73,13 @@ export function AboutSections() {
                 ))}
               </ul>
             </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              className="relative w-full h-full max-w-md mx-auto bg-cover bg-center  overflow-hidden"
+              style={{ backgroundImage: "url('/images/NiePostoime.jpg')" }}
+            ></motion.div>
           </div>
         </div>
       </section>

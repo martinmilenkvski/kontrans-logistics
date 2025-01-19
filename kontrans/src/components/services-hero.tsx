@@ -11,7 +11,7 @@ export function ServicesHero() {
       >
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-900/60" />
         <img
-          src="/services-hero.jpg"
+          src="/images/Uslugi.jpg"
           alt="Container terminal at sunset"
           className="w-full h-full object-cover"
         />

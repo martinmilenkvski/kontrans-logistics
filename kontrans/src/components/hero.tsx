@@ -177,7 +177,7 @@ export function Hero() {
           {/* Next Slide Preview */}
           <div className="mt-8 ">
             <span className="text-sm text-white/60 mb-4 block text-right">
-              Следи
+              Следно
             </span>
             <div className="relative w-48 h-32 overflow-hidden rounded-lg justify-self-end">
               <img
