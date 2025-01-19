@@ -22,7 +22,7 @@ export function BlogSection() {
   return (
     <section className="py-24 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-white mb-8">Нашиот Блог</h2>
+        <h2 className="text-3xl font-bold text-white mb-8">Вести</h2>
         <div className="relative h-[400px]">
           <AnimatePresence mode="wait">
             <motion.div

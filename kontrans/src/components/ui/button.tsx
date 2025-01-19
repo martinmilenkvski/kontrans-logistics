@@ -17,7 +17,7 @@ interface ButtonProps {
 export function Button({ onClick, children }: ButtonProps) {
   return (
     <button
-      className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+      className="rounded bg-red-500 px-4 py-2 text-white hover:bg-blue-600"
       onClick={onClick}
     >
       {children}
