@@ -6,7 +6,7 @@ import ContactPage from "./pages/ContactPage";
 import MaritimePage from "./pages/MaritimePage.tsx";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsPage from "./pages/Terms";
-// import DashboardPage from "./pages/DashboardPage";
+import DashboardPage from "./pages/DashboardPage";
 import { CookieConsent } from "./components/cookie-consent";
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
           <Route path="/services/maritime" element={<MaritimePage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/terms" element={<TermsPage />} />
-          {/* <Route path="/dashboard" element={<DashboardPage />} /> */}
+          <Route path="/dashboard" element={<DashboardPage />} />
         </Routes>
         <CookieConsent />
       </div>
