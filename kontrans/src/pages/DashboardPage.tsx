@@ -6,6 +6,7 @@ import {
   HomeIcon,
   BellIcon,
   SearchIcon,
+  InfoIcon,
 } from "lucide-react";
 
 export const PlaceholderAvatar = () => (
@@ -170,6 +171,29 @@ export default function Dashboard() {
                   30 дена валута
                 </div>
               </div>
+            </div>
+            {/* ЕТD period */}{" "}
+            <div className="bg-white p-6 rounded-xl shadow-sm">
+              
+              <div className="flex justify-between items-center">
+                
+                <div>
+                  
+                  <div className="text-2xl font-semibold">ден 36</div>
+                  <div className="text-sm text-gray-500">Вкупно патување</div>
+                </div>
+                <InfoIcon className="text-gray-400" />
+              </div>
+              
+              <div className="mt-6">
+                
+                <select className="w-full p-2 border rounded-xl text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#FF6B6B]/20">
+                  <option>Денови</option>
+                  <option>Месеци</option>
+                </select>
+               
+              </div>
+              
             </div>
           </div>
         </div>
