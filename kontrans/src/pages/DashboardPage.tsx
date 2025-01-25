@@ -179,7 +179,7 @@ export default function Dashboard() {
                 
                 <div>
                   
-                  <div className="text-2xl font-semibold">ден 36</div>
+                  <div className="text-2xl font-semibold">Ден 36</div>
                   <div className="text-sm text-gray-500">Вкупно патување</div>
                 </div>
                 <InfoIcon className="text-gray-400" />
