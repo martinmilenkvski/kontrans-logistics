@@ -174,26 +174,67 @@ export default function Dashboard() {
             </div>
             {/* ЕТD period */}{" "}
             <div className="bg-white p-6 rounded-xl shadow-sm">
-              
               <div className="flex justify-between items-center">
-                
                 <div>
-                  
                   <div className="text-2xl font-semibold">Ден 36</div>
                   <div className="text-sm text-gray-500">Вкупно патување</div>
                 </div>
                 <InfoIcon className="text-gray-400" />
               </div>
-              
+
               <div className="mt-6">
-                
                 <select className="w-full p-2 border rounded-xl text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#FF6B6B]/20">
                   <option>Денови</option>
                   <option>Месеци</option>
                 </select>
-               
               </div>
-              
+            </div>
+            {/* Progress Card */}
+            <div className="bg-white p-6 rounded-xl shadow-sm">
+              <div className="flex justify-between items-center">
+                <div className="space-y-2">
+                  <div className="font-medium">11 Дена</div>
+                  <div className="text-sm text-gray-500">
+                    Денови до пристигнување
+                  </div>
+                  <div className="flex gap-1">
+                    {Array.from({ length: 13 }).map((_, i) => (
+                      <div
+                        key={i}
+                        className={`h-1 w-2 rounded-full ${
+                          i < 7 ? "bg-[#FF6B6B]" : "bg-gray-200"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </div>
+                <div className="relative h-16 w-16">
+                  <svg className="w-full h-full" viewBox="0 0 32 32">
+                    <circle
+                      cx="16"
+                      cy="16"
+                      r="14"
+                      fill="none"
+                      stroke="#e5e7eb"
+                      strokeWidth="4"
+                    />
+                    <circle
+                      cx="16"
+                      cy="16"
+                      r="14"
+                      fill="none"
+                      stroke="#FF6B6B"
+                      strokeWidth="4"
+                      strokeDasharray="88"
+                      strokeDashoffset="56"
+                      transform="rotate(-90 16 16)"
+                    />
+                  </svg>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-sm font-medium">36%</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
