@@ -11,7 +11,7 @@ export function MaritimeHero() {
       >
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-900/60" />
         <img
-          src="/maritime-hero.jpg"
+          src="/images/brodski-transport.jpg"
           alt="Cargo ship at sea"
           className="w-full h-full object-cover"
         />
