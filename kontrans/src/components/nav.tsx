@@ -3,8 +3,10 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { LoginModal } from "./login-modal";
+import { useAuth } from "../context/AuthContext";
 
 export function Nav() {
+  const { isLoggedIn } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
@@ -34,18 +36,20 @@ export function Nav() {
               <NavLink href="/services">Услуги</NavLink>
               <NavLink href="/blog">Блог</NavLink>
               <NavLink href="/contact">Контакт</NavLink>
-              <Button
-                asChild
-                className="bg-red-500 hover:bg-red-600 text-white"
-              >
-                <a href="/dashboard">Табла</a>
-              </Button>
+              {isLoggedIn && (
+                <Button
+                  asChild
+                  className="bg-red-500 hover:bg-red-600 text-white"
+                >
+                  <a href="/dashboard">Табла</a>
+                </Button>
+              )}
               <Button
                 variant="outline"
                 onClick={() => setIsLoginModalOpen(true)}
                 className="border-slate-700 text-slate-300 hover:bg-slate-800"
               >
-                Најави се
+                {isLoggedIn ? "Одјави се" : "Најави се"}
               </Button>
             </div>
 
@@ -72,7 +76,9 @@ export function Nav() {
             <MobileNavLink href="/services">Услуги</MobileNavLink>
             <MobileNavLink href="/blog">Блог</MobileNavLink>
             <MobileNavLink href="/contact">Контакт</MobileNavLink>
-            <MobileNavLink href="/dashboard">Табла</MobileNavLink>
+            {isLoggedIn && (
+              <MobileNavLink href="/dashboard">Табла</MobileNavLink>
+            )}
             <Button
               variant="outline"
               onClick={() => {
@@ -81,7 +87,7 @@ export function Nav() {
               }}
               className="w-full justify-start border-slate-700 text-slate-300 hover:bg-slate-800"
             >
-              Најави се
+              {isLoggedIn ? "Одјави се" : "Најави се"}
             </Button>
           </div>
         </motion.div>
