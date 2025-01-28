@@ -9,6 +9,7 @@ import TermsPage from "./pages/Terms";
 import DashboardPage from "./pages/DashboardPage";
 import { CookieConsent } from "./components/cookie-consent";
 import { AuthProvider } from "./context/AuthContext";
+import ShipmentsPage from "./components/shippments-screen.tsx";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
             <Route path="/terms" element={<TermsPage />} />
             <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/shippments-screen" element={<ShipmentsPage />} />
           </Routes>
           <CookieConsent />
         </div>
