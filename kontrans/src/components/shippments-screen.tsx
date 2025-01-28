@@ -2,7 +2,6 @@ import { useState } from "react";
 import { TruckIcon, PackageIcon, ArrowLeftIcon } from "lucide-react";
 import ShipmentTracking from "./ShipmentTracking";
 import { Link } from "react-router-dom";
-import React from "react";
 
 // Mock data for shipments
 const shipments = [
@@ -66,10 +65,8 @@ export default function ShipmentsPage() {
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold">Shipments</h1>
         <Link
-          ref="/"
-          className="flex items-center gap-2 px-4 py-2 bg-[#FF6B6B] text-white rounded-lg hover:bg-[#FF6B6B]/90 transition-colors"
-          to={""}
-        >
+                  ref="/"
+                  className="flex items-center gap-2 px-4 py-2 bg-[#FF6B6B] text-white rounded-lg hover:bg-[#FF6B6B]/90 transition-colors" to={""}        >
           <ArrowLeftIcon className="w-4 h-4" />
           Return to Dashboard
         </Link>
