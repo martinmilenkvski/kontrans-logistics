@@ -1,7 +1,6 @@
 
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Check, Truck, Warehouse, Network, Globe } from "lucide-react";
+import { Truck, Warehouse, Network, Globe } from "lucide-react";
 
 
 export function TestimonialSlider() {
