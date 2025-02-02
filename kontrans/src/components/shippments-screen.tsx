@@ -113,7 +113,7 @@ export default function ShipmentsPage() {
                   {selectedShipment.containerNumber}
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-3 gap-4">
                 <div>
                   <div className="text-sm text-gray-500">Origin Port</div>
                   <div className="font-medium">
@@ -125,24 +125,8 @@ export default function ShipmentsPage() {
                   <div className="font-medium">{selectedShipment.shipper}</div>
                 </div>
                 <div>
-                  <div className="text-sm text-gray-500">Delivery Port</div>
-                  <div className="font-medium">
-                    {selectedShipment.deliveryPort}
-                  </div>
-                </div>
-                <div>
-                  <div className="text-sm text-gray-500">Final Destination</div>
-                  <div className="font-medium">
-                    {selectedShipment.finalDestination}
-                  </div>
-                </div>
-                <div>
                   <div className="text-sm text-gray-500">Status</div>
                   <div className="font-medium">{selectedShipment.status}</div>
-                </div>
-                <div>
-                  <div className="text-sm text-gray-500">Container Type</div>
-                  <div className="font-medium">{selectedShipment.type}</div>
                 </div>
               </div>
               <div className="bg-gray-50 rounded-lg p-4">
