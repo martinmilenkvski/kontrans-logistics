@@ -3,19 +3,52 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { blogPosts, BlogPost } from "../data/blog-posts";
+import { getAllBlogPosts } from "../storage/fetchPosts";
 import { Button } from "../components/ui/button";
 
 export function BlogSection() {
+  interface BlogPost {
+    id: string;
+    title: string;
+    imageUrl: string;
+    excerpt: string;
+    author: string;
+    date: string;
+  }
+
+  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [currentPostIndex, setCurrentPostIndex] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentPostIndex((prevIndex) => (prevIndex + 1) % blogPosts.length);
-    }, 4000);
-
-    return () => clearInterval(timer);
+    async function fetchData() {
+      const posts = await getAllBlogPosts();
+      // Map posts with default values for missing properties.
+      const fullPosts = posts.map(
+        (post: Partial<BlogPost> & { id: string }) => ({
+          id: post.id,
+          title: post.title || "Untitled",
+          imageUrl: post.imageUrl || "/default.png",
+          excerpt: post.excerpt || "",
+          author: post.author || "Unknown",
+          date: post.date || new Date().toISOString(),
+        })
+      );
+      setBlogPosts(fullPosts);
+    }
+    fetchData();
   }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentPostIndex((prevIndex) =>
+        blogPosts.length > 0 ? (prevIndex + 1) % blogPosts.length : 0
+      );
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [blogPosts]);
+
+  if (blogPosts.length === 0)
+    return <p className="text-white">Loading...</p>;
 
   const currentPost = blogPosts[currentPostIndex];
 
@@ -46,31 +79,24 @@ export function BlogSection() {
                     <h3 className="text-2xl font-bold text-white mb-4">
                       {currentPost.title}
                     </h3>
-                    <p className="text-slate-300 mb-4">{currentPost.excerpt}</p>
+                    <p className="text-slate-300 mb-4">
+                      {currentPost.excerpt}
+                    </p>
                   </div>
                   <div>
                     <p className="text-slate-400 mb-4">
                       {currentPost.author} | {currentPost.date}
                     </p>
                     <Link to={`/blog/${currentPost.id}`}>
-                      <Button variant="outline">Прочитај повеќе</Button>
+                      <Button variant="outline">
+                        Прочитај повеќе
+                      </Button>
                     </Link>
                   </div>
                 </div>
               </div>
             </motion.div>
           </AnimatePresence>
-        </div>
-        <div className="flex justify-center mt-8">
-          {blogPosts.map((post, index) => (
-            <button
-              key={post.id}
-              className={`w-3 h-3 rounded-full mx-2 ${
-                index === currentPostIndex ? "bg-red-500" : "bg-slate-600"
-              }`}
-              onClick={() => setCurrentPostIndex(index)}
-            />
-          ))}
         </div>
       </div>
     </section>
