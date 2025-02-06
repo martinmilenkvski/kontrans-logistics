@@ -27,7 +27,7 @@ export function BlogSection() {
         (post: Partial<BlogPost> & { id: string }) => ({
           id: post.id,
           title: post.title || "Untitled",
-          imageUrl: post.imageUrl || "/default.png",
+          imageUrl: post.imageUrl || "../images/warehouse.jpg",
           excerpt: post.excerpt || "",
           author: post.author || "Unknown",
           date: post.date || new Date().toISOString(),
@@ -47,8 +47,7 @@ export function BlogSection() {
     return () => clearInterval(timer);
   }, [blogPosts]);
 
-  if (blogPosts.length === 0)
-    return <p className="text-white">Loading...</p>;
+  if (blogPosts.length === 0) return <p className="text-white">Loading...</p>;
 
   const currentPost = blogPosts[currentPostIndex];
 
@@ -79,18 +78,14 @@ export function BlogSection() {
                     <h3 className="text-2xl font-bold text-white mb-4">
                       {currentPost.title}
                     </h3>
-                    <p className="text-slate-300 mb-4">
-                      {currentPost.excerpt}
-                    </p>
+                    <p className="text-slate-300 mb-4">{currentPost.excerpt}</p>
                   </div>
                   <div>
                     <p className="text-slate-400 mb-4">
                       {currentPost.author} | {currentPost.date}
                     </p>
                     <Link to={`/blog/${currentPost.id}`}>
-                      <Button variant="outline">
-                        Прочитај повеќе
-                      </Button>
+                      <Button variant="outline">Прочитај повеќе</Button>
                     </Link>
                   </div>
                 </div>
