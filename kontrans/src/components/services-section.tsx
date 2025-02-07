@@ -1,13 +1,13 @@
-import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
-import { Plane, Ship, Truck } from 'lucide-react'
-import { Button } from '../components/ui/button'
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import { Plane, Ship, Truck } from "lucide-react";
+import { Button } from "../components/ui/button";
 
 interface ServiceCardProps {
-  icon: React.ReactNode
-  title: string
-  description: string
-  delay: number
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  delay: number;
 }
 
 const cardVariants = {
@@ -15,9 +15,9 @@ const cardVariants = {
   visible: (delay: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: "easeInOut", delay }
-  })
-}
+    transition: { duration: 0.5, ease: "easeInOut", delay },
+  }),
+};
 
 function ServiceCard({ icon, title, description, delay }: ServiceCardProps) {
   return (
@@ -38,22 +38,22 @@ function ServiceCard({ icon, title, description, delay }: ServiceCardProps) {
       </motion.div>
       <h3 className="text-2xl font-extrabold text-white mb-4">{title}</h3>
       <p className="text-slate-200 mb-6">{description}</p>
-      <Button 
-        variant="ghost" 
+      <Button
+        variant="ghost"
         className="text-red-500 border-red-500 hover:text-white hover:bg-red-500 transition-colors duration-300 py-2 px-6 rounded-full"
       >
         Повеќе
       </Button>
     </motion.div>
-  )
+  );
 }
 
 export function ServicesSection() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-50px" })
-  
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
   return (
-    <section ref={ref} className="py-24 px-4 bg-gradient-to-b from-gray-800 to-gray-900">
+    <section ref={ref} className="py-24 px-4">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -66,7 +66,9 @@ export function ServicesSection() {
             <span className="text-white">Услуги</span>
           </h2>
           <p className="text-slate-300 max-w-3xl mx-auto text-lg">
-            Нашите решенија се создадени за да ги задоволат вашите најсовремени потреби во логистиката. Без разлика дали патувате по море, воздух или копно, ние имаме решение за вас.
+            Нашите решенија се создадени за да ги задоволат вашите најсовремени
+            потреби во логистиката. Без разлика дали патувате по море, воздух
+            или копно, ние имаме решение за вас.
           </p>
         </motion.div>
 
@@ -92,5 +94,5 @@ export function ServicesSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
